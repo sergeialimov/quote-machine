@@ -5,28 +5,37 @@ class QuoteBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quotes: this.props.quotes
+      quotes: this.props.quotes,
+      quote: this.props.quotes[0].quote,
+      author: this.props.quotes[0].author,
     };
     this.getRandom = this.getRandom.bind(this)
+    this.onClick = this.onClick.bind(this)
   }
   
-  getRandom(max) {
-    return Math.floor(Math.random() * Math.floor(max));
+  getRandom() {
+    return Math.floor(Math.random() * Math.floor(this.state.quotes.length));
+  }
+  
+  onClick(event) {
+    // event.preventDefault();
+    const num = this.getRandom();
+    this.setState({
+      quote: this.props.quotes[num].quote,
+      author: this.props.quotes[num].author,
+    })
   }
   
   render() {
-    console.log(this.state.quotes);
-    
-    const num = this.getRandom(this.state.quotes.length);
     return (
       <div className="quote-box">
         <header className="quote">
-          <p>{this.state.quotes[num].quote}</p>
+          <p>{this.state.quote}</p>
         </header>
         <div className="author">
-          <p>- {this.state.quotes[num].author}</p>
+          <p>- {this.state.author}</p>
         </div>
-        <button className="new-quote-btn">New quote</button>
+        <button className="new-quote-btn" onClick={this.onClick}>New quote</button>
       </div>
     );
   }
