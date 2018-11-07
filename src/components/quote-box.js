@@ -4,7 +4,9 @@ import './../styles/quote-box.css'
 class QuoteBox extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      quotes: this.props.quotes
+    };
     this.getRandom = this.getRandom.bind(this)
   }
   
@@ -13,20 +15,16 @@ class QuoteBox extends Component {
   }
   
   render() {
-    const quotes = [
-      {
-        quote: 'Challenges are what make life interesting and overcoming them is what makes life meaningful.',
-        author: 'Chinese Proverb'
-      }
-    ]
-    const num = this.getRandom(quotes.length);
+    console.log(this.state.quotes);
+    
+    const num = this.getRandom(this.state.quotes.length);
     return (
       <div className="quote-box">
         <header className="quote">
-          <p>{quotes[num].quote}</p>
+          <p>{this.state.quotes[num].quote}</p>
         </header>
         <div className="author">
-          <p>- {quotes[num].author}</p>
+          <p>- {this.state.quotes[num].author}</p>
         </div>
         <button className="new-quote-btn">New quote</button>
       </div>
