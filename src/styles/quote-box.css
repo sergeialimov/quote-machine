@@ -1,9 +1,9 @@
 :root {
-  --dark-color: gray;
-  --bright-color: lightblue;
+  --dark-color: #2c1b1e;
+  --bright-color: white;
 }
 
-.quote-box {
+#quote-box {
   height: 250px;
   width: 500px;
   align-self: center;
@@ -12,26 +12,47 @@
   margin-right: auto;
 }
 
-header {
+#text {
   margin: 40px 30px 20px 30px;
   text-align: center;
   font-size: 24px;
+  font-weight: 500;
 }
 
-.author {
+#author {
   text-align: right;
   font-size: 18px;
   margin-right: 20px;
 }
 
-.new-quote-btn {
+#button-group {
+  display: flex;
+  float: left;
+}
+
+#new-quote {
   width: 120px;
   height: 30px;
   background-color: var(--dark-color);
   color: var(--bright-color);
   font-size: 16px;
+  font-weight: 600;
   border: none;
   border-radius: 2px;
-  margin-right: 20px;
-  margin-left: 360px;
+  margin-left: 280px;
+  /* margin: 20px 20px 20px 360px; */
+}
+
+#tweet-quote {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  background-color: var(--dark-color);
+  margin-left: 50px;
+}
+
+img {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
 }

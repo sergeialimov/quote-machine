@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './../styles/quote-box.css'
+import twitterLogo from './../img/twitter-logo.png';
 
 class QuoteBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quotes: this.props.quotes,
       quote: this.props.quotes[0].quote,
       author: this.props.quotes[0].author,
     };
@@ -14,7 +14,7 @@ class QuoteBox extends Component {
   }
   
   getRandom() {
-    return Math.floor(Math.random() * Math.floor(this.state.quotes.length));
+    return Math.floor(Math.random() * Math.floor(this.props.quotes.length));
   }
   
   onClick(event) {
@@ -27,15 +27,19 @@ class QuoteBox extends Component {
   }
   
   render() {
+    const twitUrl = `https://twitter.com/intent/tweet?text=%22${this.state.quote}%22%20${this.state.author}%20%23quotes`;
     return (
-      <div className="quote-box">
-        <header className="quote">
+      <div id="quote-box">
+        <header id="text">
           <p>{this.state.quote}</p>
         </header>
-        <div className="author">
+        <div id="author">
           <p>- {this.state.author}</p>
         </div>
-        <button className="new-quote-btn" onClick={this.onClick}>New quote</button>
+        <div id="button-group">
+          <a id="tweet-quote" href={twitUrl}><img src={twitterLogo} width="20" height="20" alt="Tweet it" /></a>
+          <button id="new-quote" onClick={this.onClick}>New quote</button>
+        </div>
       </div>
     );
   }
