@@ -4,35 +4,40 @@
 }
 
 #quote-box {
-  height: 250px;
   width: 500px;
   align-self: center;
   background-color: var(--bright-color);
   margin-left: auto;
   margin-right: auto;
+  border-radius: 3px;
 }
 
 #text {
-  margin: 40px 30px 20px 30px;
+  margin: 40px 30px 0px 30px;
   text-align: center;
   font-size: 24px;
   font-weight: 500;
+  display: inline-block;
 }
 
 #author {
   text-align: right;
   font-size: 18px;
+  margin-top: 0px;
   margin-right: 20px;
 }
 
 #button-group {
   display: flex;
   float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 40px;
 }
 
 #new-quote {
   width: 120px;
-  height: 30px;
+  height: 40px;
   background-color: var(--dark-color);
   color: var(--bright-color);
   font-size: 16px;
@@ -40,15 +45,14 @@
   border: none;
   border-radius: 2px;
   margin-left: 280px;
-  /* margin: 20px 20px 20px 360px; */
 }
 
 #tweet-quote {
   display: flex;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: var(--dark-color);
-  margin-left: 50px;
+  border-radius: 3px;
 }
 
 img {
