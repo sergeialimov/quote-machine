@@ -8,6 +8,7 @@ class QuoteBox extends Component {
     this.state = {
       quote: this.props.quotes[0].quote,
       author: this.props.quotes[0].author,
+      color: this.props.quotes[0].color,
     };
     this.getRandom = this.getRandom.bind(this)
     this.onClick = this.onClick.bind(this)
@@ -22,11 +23,14 @@ class QuoteBox extends Component {
     this.setState({
       quote: this.props.quotes[num].quote,
       author: this.props.quotes[num].author,
+      color: this.props.quotes[num].color,
     })
+    this.props.getNum(num);
   }
   
   render() {
     const twitUrl = `https://twitter.com/intent/tweet?text=%22${this.state.quote}%22%20${this.state.author}%20%23quotes`;
+    const style = { "background-color": this.state.color };
     return (
       <div id="quote-box">
         <header id="text">
@@ -34,10 +38,10 @@ class QuoteBox extends Component {
         </header>
         <p id="author">- {this.state.author}</p>
         <div id="button-group">
-          <a id="tweet-quote" href={twitUrl} target="_blank" rel="noopener noreferrer">
+          <a id="tweet-quote" href={twitUrl} target="_blank" rel="noopener noreferrer" style={style}>
             <img src={twitterLogo} width="20" height="20" alt="Tweet it" />
           </a>
-          <button id="new-quote" onClick={this.onClick}>New quote</button>
+          <button id="new-quote" onClick={this.onClick} style={style}>New quote</button>
         </div>
       </div>
     );
