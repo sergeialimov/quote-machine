@@ -18,7 +18,6 @@ class QuoteBox extends Component {
   }
   
   onClick(event) {
-    // event.preventDefault();
     const num = this.getRandom();
     this.setState({
       quote: this.props.quotes[num].quote,
@@ -33,11 +32,11 @@ class QuoteBox extends Component {
         <header id="text">
           <p>{this.state.quote}</p>
         </header>
-        <div id="author">
-          <p>- {this.state.author}</p>
-        </div>
+        <p id="author">- {this.state.author}</p>
         <div id="button-group">
-          <a id="tweet-quote" href={twitUrl}><img src={twitterLogo} width="20" height="20" alt="Tweet it" /></a>
+          <a id="tweet-quote" href={twitUrl} target="_blank" rel="noopener noreferrer">
+            <img src={twitterLogo} width="20" height="20" alt="Tweet it" />
+          </a>
           <button id="new-quote" onClick={this.onClick}>New quote</button>
         </div>
       </div>
