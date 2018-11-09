@@ -47,12 +47,20 @@
   margin-left: 280px;
 }
 
+#new-quote:hover {
+  opacity: 0.8;
+}
+
 #tweet-quote {
   display: flex;
   width: 40px;
   height: 40px;
   background-color: var(--dark-color);
   border-radius: 3px;
+}
+
+#tweet-quote:hover {
+  opacity: 0.8;
 }
 
 img {

@@ -30,7 +30,10 @@ class QuoteBox extends Component {
   
   render() {
     const twitUrl = `https://twitter.com/intent/tweet?text=%22${this.state.quote}%22%20${this.state.author}%20%23quotes`;
-    const style = { "background-color": this.state.color };
+    const style = {
+      "backgroundColor": this.state.color,
+      "transition": "background-color 2s",
+    };
     return (
       <div id="quote-box">
         <header id="text">

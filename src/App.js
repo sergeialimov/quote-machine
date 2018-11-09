@@ -26,7 +26,11 @@ class App extends Component {
   }
     
   render() {
-    const style = { "background-color": quotes[this.state.num].color}
+    const style = {
+      "backgroundColor": quotes[this.state.num].color,
+      "transition": "background-color 2s",
+    }
+
     return (
       <div className="App" style={ style }>
         <QuoteBox quotes={quotes} getNum={this.getNum}/>
