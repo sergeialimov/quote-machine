@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './styles/App.css';
-import QuoteBox from './components/quote-box.js';
+import QuoteBox from './components/Quote-box.js';
 import quotes from './quotes.js'
 import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -34,14 +34,6 @@ class App extends Component {
       num: 0,
     }
   }
-  // componentDidMount () {
-  //   const script = document.createElement("script");
-  // 
-  //   script.src = "https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js";
-  //   script.async = true;
-  // 
-  //   document.body.appendChild(script);
-  // }
   
   getNum = (randomNum) => {
     this.setState({
@@ -63,4 +55,14 @@ class App extends Component {
   }
 }
 
-export default App;
+class AppWrapper extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    )
+  }
+}
+
+export default AppWrapper;
