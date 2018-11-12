@@ -25,20 +25,6 @@ const numReducer = (state = 0, action) => {
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    num: state
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    submitNewNum: (num) => {
-      dispatch(updateNum(num));
-    }
-  }
-};
-
 const store = createStore(numReducer);
 
 class App extends Component {
@@ -69,11 +55,27 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    num: state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewNum: (num) => {
+      dispatch(updateNum(num));
+    }
+  }
+};
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(App)
+
 class AppWrapper extends Component {
   render() {
     return (
       <Provider store={store}>
-        <App />
+        <Container />
       </Provider>
     )
   }
