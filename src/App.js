@@ -25,6 +25,12 @@ const numReducer = (state = 0, action) => {
   }
 };
 
+const mapStateToProps = (state) => {
+  return {
+    num: state
+  }
+}
+
 const store = createStore(numReducer);
 
 class App extends Component {
