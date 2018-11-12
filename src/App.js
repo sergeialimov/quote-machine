@@ -31,6 +31,14 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewNum: (num) => {
+      dispatch(updateNum(num));
+    }
+  }
+};
+
 const store = createStore(numReducer);
 
 class App extends Component {
