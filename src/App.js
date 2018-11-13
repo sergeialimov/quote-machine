@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 
 const NUM = 'NUM';
 
-const updateNum = (num) => {
+const submitNewNum = (num) => {
   return {
     type: NUM,
     num
@@ -17,9 +17,7 @@ const updateNum = (num) => {
 const numReducer = (state = 0, action) => {
   switch (action.type) {
     case NUM:
-      return [
-        action.num
-      ];
+      return action.num;
     default:
       return state;
   }
@@ -28,34 +26,20 @@ const numReducer = (state = 0, action) => {
 const store = createStore(numReducer);
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      num: 0,
-    }
-  }
-  
-  getNum = (randomNum) => {
-    this.setState({
-      num: randomNum,
-    })
-  }
-    
   render() {
     const style = {
-      "backgroundColor": quotes[this.state.num].color,
+      "backgroundColor": quotes[this.props.num].color,
       "transition": "background-color 2s",
     }
-
     return (
       <div className="App" style={ style }>
-        <QuoteBox quotes={quotes} getNum={this.getNum}/>
+        <QuoteBox />
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state=0) => {
   return {
     num: state
   }
@@ -63,8 +47,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    submitNewNum: (num) => {
-      dispatch(updateNum(num));
+    updateNum: (num) => {
+      dispatch(submitNewNum(num));
     }
   }
 };
