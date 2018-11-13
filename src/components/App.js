@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './styles/App.css';
-import QuoteBox from './components/Quote-box.js';
-import quotes from './quotes.js'
+import './../styles/App.css';
+import QuoteBox from './Quote-box.js';
+import quotes from './../quotes.js'
 import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
 
