@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import './../styles/quote-box.css'
+import './../styles/quoteBox.css'
 import twitterLogo from './../img/twitter-logo.png';
 import quotes from './../quotes.js'
-import { connect } from 'react-redux';
-import { submitNewNum } from './../actions/submitNewNum.js';
 
 class QuoteBox extends Component {
   constructor(props) {
@@ -43,27 +41,4 @@ class QuoteBox extends Component {
   }
 }
 
-const mapStateToProps = (state=0) => {
-  return {
-    num: state
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    updateNum: (num) => {
-      dispatch(submitNewNum(num));
-    }
-  }
-};
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(QuoteBox)
-
-class QuoteBoxWrapper extends Component {
-  render() {
-    return (
-      <Container />
-    )
-  }
-} 
-export default QuoteBoxWrapper;
+export default QuoteBox;

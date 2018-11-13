@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './../styles/App.css';
-import QuoteBox from './Quote-box.js';
+import './../styles/app.css';
+import QuoteBox from './../containers/quoteBox.jsx';
 import quotes from './../quotes.js'
 import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
