@@ -49,6 +49,7 @@
 
 #new-quote:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 #tweet-quote {
