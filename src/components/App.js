@@ -5,15 +5,7 @@ import quotes from './../quotes.js'
 import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { submitNewNum } from './../actions/submitNewNum.js';
-
-const numReducer = (state = 0, action) => {
-  switch (action.type) {
-    case 'NUM':
-      return action.num;
-    default:
-      return state;
-  }
-};
+import { numReducer } from './../reducers/num.js'
 
 const store = createStore(numReducer);
 
