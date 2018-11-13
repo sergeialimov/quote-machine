@@ -4,19 +4,11 @@ import QuoteBox from './Quote-box.js';
 import quotes from './../quotes.js'
 import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
-
-const NUM = 'NUM';
-
-const submitNewNum = (num) => {
-  return {
-    type: NUM,
-    num
-  }
-};
+import { submitNewNum } from './../actions/index.js';
 
 const numReducer = (state = 0, action) => {
   switch (action.type) {
-    case NUM:
+    case 'NUM':
       return action.num;
     default:
       return state;

@@ -3,15 +3,7 @@ import './../styles/quote-box.css'
 import twitterLogo from './../img/twitter-logo.png';
 import quotes from './../quotes.js'
 import { connect } from 'react-redux';
-
-const NUM = 'NUM';
-
-const submitNewNum = (num) => {
-  return {
-    type: NUM,
-    num
-  }
-};
+import { submitNewNum } from './../actions/index.js';
 
 class QuoteBox extends Component {
   constructor(props) {
