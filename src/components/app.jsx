@@ -17,7 +17,7 @@ class App extends Component {
       "transition": "background-color 2s",
     }
     return (
-      <div className="App" style={ style }>
+      <div className="app" style={ style }>
         <QuoteBox />
       </div>
     );
