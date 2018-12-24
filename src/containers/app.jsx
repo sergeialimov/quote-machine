@@ -1,4 +1,4 @@
-import App from './../components/app.js';
+import App from './../components/app.jsx';
 import { submitNewNum } from './../actions/submitNewNum.js';
 import { connect, Provider } from 'react-redux';
 import { numReducer } from './../reducers/num.js';

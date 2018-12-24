@@ -1,4 +1,4 @@
-import QuoteBox from './../components/quoteBox.js';
+import QuoteBox from './../components/quoteBox.jsx';
 import { submitNewNum } from './../actions/submitNewNum.js';
 import { connect } from 'react-redux';
 
